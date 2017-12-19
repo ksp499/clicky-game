@@ -11,11 +11,22 @@ class GameContainer extends Component {
 	};
 
 	handleOnClick = event => {
+		let tempScore = this.state.score;
+
 		if (this.checkDuplicate(event.target.id)) {
 			console.log("no duplicate!");
+			++tempScore;
+			this.setState({
+				score: tempScore
+			});
 		} else {
 			console.log("duplicate card!!!");
+			this.setState({
+				score: 0
+			});
 		}
+
+		
 		
 		this.shuffleImages(this.state.images);
 	};
@@ -52,6 +63,9 @@ class GameContainer extends Component {
 	render() {
 		return (
 			<div>
+				<div>
+					Score : {this.state.score}
+				</div>
 				{this.state.images.map(image => (
 					<Image
 						key={image.id}
