@@ -5,15 +5,32 @@ import images from "../images.json";
 class GameContainer extends Component {
 
 	state = {
-		images
+		images,
+		score: 0,
+		clickedImages: []
 	};
 
 	handleOnClick = event => {
+		if (this.checkDuplicate(event.target.id)) {
+			console.log("no duplicate!");
+		} else {
+			console.log("duplicate card!!!");
+		}
+		
 		this.shuffleImages(this.state.images);
 	};
 
+	checkDuplicate = number => {
+		for(let i = 0; i < this.state.clickedImages.length; i++) {
+			if ( this.state.clickedImages[i] === number) {
+				return false;
+			}
+		}
+		this.state.clickedImages.push(number);
+		return true;
+	}
+
 	shuffleImages = images => {
-		console.log(images.length);
 
 		let counter = images.length;
 
