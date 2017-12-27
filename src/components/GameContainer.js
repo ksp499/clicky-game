@@ -7,6 +7,7 @@ class GameContainer extends Component {
 	state = {
 		images,
 		score: 0,
+		topScore: 0,
 		clickedImages: []
 	};
 
@@ -21,12 +22,16 @@ class GameContainer extends Component {
 			});
 		} else {
 			console.log("duplicate card!!!");
+			if (this.state.score > this.state.topScore) {
+				this.setState({
+					topScore: this.state.score
+				});
+			}
 			this.setState({
-				score: 0
+				score: 0,
+				clickedImages: []
 			});
 		}
-
-		
 		
 		this.shuffleImages(this.state.images);
 	};
@@ -64,7 +69,8 @@ class GameContainer extends Component {
 		return (
 			<div>
 				<div>
-					Score : {this.state.score}
+					Score : {this.state.score} <br />
+					Top Score : {this.state.topScore}
 				</div>
 				{this.state.images.map(image => (
 					<Image
