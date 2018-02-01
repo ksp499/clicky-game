@@ -69,18 +69,29 @@ class GameContainer extends Component {
 		return (
 			<div>
 				<div>
-					Score is : {this.state.score} <br />
-					Top Score : {this.state.topScore}
+					<nav class="navbar navbar-default">
+					  <ul>
+					  	<li class="brand">
+					  		<a href="/">Clicky Game</a>
+					  	</li>
+					  	<li>Click an image to begin!</li>
+					  	<li>
+					  		Score : {this.state.score} | Top Score : {this.state.topScore}
+					  	</li>
+					  </ul>
+					</nav>
 				</div>
-				{this.state.images.map(image => (
-					<Image
-						key={image.id}
-						id={image.id}
-						name={image.name}
-						image={image.image}
-						handleOnClick={this.handleOnClick}
-					/>
-				))}
+				<div class="img-container">
+					{this.state.images.map(image => (
+						<Image
+							key={image.id}
+							id={image.id}
+							name={image.name}
+							image={image.image}
+							handleOnClick={this.handleOnClick}
+						/>
+					))}
+				</div>
 			</div>
 		);
 	}
