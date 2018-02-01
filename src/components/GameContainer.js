@@ -69,7 +69,7 @@ class GameContainer extends Component {
 		return (
 			<div>
 				<div>
-					Score : {this.state.score} <br />
+					Score is : {this.state.score} <br />
 					Top Score : {this.state.topScore}
 				</div>
 				{this.state.images.map(image => (
