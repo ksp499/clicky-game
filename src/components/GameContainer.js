@@ -92,6 +92,11 @@ class GameContainer extends Component {
 						/>
 					))}
 				</div>
+				<div class="btn-container">
+					<button type="button" class="btn">
+					<a class="github" href="https://github.com/ksp499/clicky-game">Github</a>
+					</button>
+				</div>
 			</div>
 		);
 	}

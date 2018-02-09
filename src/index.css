@@ -22,6 +22,22 @@ a {
 	color: white !important;
 }
 
+.github {
+	color: black !important;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	font-size: 20px;
+}
+
+.btn {
+	width: 10%;
+}
+
+.btn-container {
+	text-align: center;
+}
+
 .navbar {
 	background-color: #5133a4;
 }
@@ -31,6 +47,9 @@ img {
 }
 
 .img-container {
-	width: 1000px;
-	margin: 50px auto;
+	width: 100%;
+	margin : 50px 20px;
+	padding : 0px 200px;
+	text-align: center;
+	display: inline-block;
 }
